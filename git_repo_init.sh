@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# 概要:
+# このスクリプトは、ローカルのGitリポジトリを初期化し、GitHubにリモートリポジトリを作成して連携します。
+#
+# 入力:
+# - .envファイル内のGITHUB_USER: GitHubのユーザー名
+# - コマンドライン引数: リポジトリ名（指定がない場合は現在のディレクトリ名を使用）
+#
+# 出力:
+# - GitHubにリモートリポジトリが作成され、ローカルリポジトリと連携されます
+
 # 前提条件:
 # 1. GitHub CLIのインストール
 #    Mac: brew install gh
@@ -12,9 +22,16 @@
 #    Mac: brew install git
 #    Linux: sudo apt-get install git
 
+# やり直す場合:
+# 1. Gitリポジトリを削除
+#    rm -rf .git
+
+# スクリプトのディレクトリを取得
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # .envファイルから環境変数を読み込む
-if [ -f .env ]; then
-    export $(cat .env | xargs)
+if [ -f "$SCRIPT_DIR/.env" ]; then
+    export $(cat "$SCRIPT_DIR/.env" | xargs)
 fi
 
 # 環境変数から値を取得

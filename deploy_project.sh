@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: 消す
 # プロジェクト名とリージョンの設定
 PROJECT_ID=$(gcloud config get-value project)
 REGION=asia-northeast1

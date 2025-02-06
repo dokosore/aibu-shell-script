@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: 消す
 # 自動デプロイの設定
 gcloud beta builds triggers create github \
   --name="nextjs-app-trigger" \
