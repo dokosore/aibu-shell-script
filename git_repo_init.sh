@@ -55,8 +55,8 @@ git add .
 # 初期コミット
 git commit -m "initial commit"
 
-# GitHubに新しいリポジトリを作成（パブリック）
-gh repo create "$github_user/$repo_name" --public -y
+# GitHubに新しいリポジトリを作成（プライベート）
+gh repo create "$github_user/$repo_name" --private -y
 
 # mainブランチに変更
 git branch -M main
